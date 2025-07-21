@@ -140,6 +140,7 @@ def evaluate(
     gguf_file: Optional[str] = None,
     **model_kwargs,
 ):
+    #print(samples)
     if model_kwargs:
         # To suppress the warning of tokenizers
         os.environ["TOKENIZERS_PARALLELISM"] = os.environ.get(
@@ -163,7 +164,8 @@ def evaluate(
             result_path = samples.replace(".jsonl", "_eval_results.json")
         else:
             result_path = samples.replace(".jsonl", ".eval_results.json")
-
+    #print(result_path)
+    #print('ssdsdasdass~!!!!!!!!!!!!!!!!!')
     if output_file is not None:
         result_path = output_file
 
@@ -363,6 +365,7 @@ def evaluate(
     if not os.path.isfile(result_path):
         with open(result_path, "w") as f:
             json.dump(results, f)
+    return pass_at_k 
 
 
 def main():
