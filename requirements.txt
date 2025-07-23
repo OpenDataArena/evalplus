@@ -10,7 +10,7 @@ rich
 openai
 tree-sitter==0.21.3
 tree-sitter-python
-datasets
+datasets==3.6.0
 psutil
 
 # vllm
